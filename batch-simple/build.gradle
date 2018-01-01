@@ -1,0 +1,3 @@
+apply from: '../spring-xd.gradle'
+
+description = "Batch Simple Example"
