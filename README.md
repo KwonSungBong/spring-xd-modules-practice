@@ -15,6 +15,9 @@ spring xd batch job
 
 https://github.com/spring-projects/spring-xd-samples/tree/master/batch-simple
 
+https://github.com/spring-projects/spring-xd/blob/master/src/docs/asciidoc/Batch-Jobs.asciidoc
+
+
 #################################################################################
 
 
@@ -24,6 +27,7 @@ scp /Users/ksb/Documents/spring_xd/spring-xd-modules-practice/batch-simple/build
 
 
 2. xd shell 접속 후 잡 등록
+
 module upload --type job --name myjob --file /home/ksb/Documents/service/spring-xd/job/batch-simple.jar
 
 job create --name helloSpringXD --definition "myjob"
@@ -31,6 +35,11 @@ job create --name helloSpringXD --definition "myjob"
 job deploy helloSpringXD
 
 job launch helloSpringXD
+
+
+3. 크론 등록
+
+http://www.bookstorage.kr:9393/admin-ui/#/jobs/deployments 접속 후 등록
 
 
 #################################################################################
