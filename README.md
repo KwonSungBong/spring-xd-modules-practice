@@ -28,6 +28,10 @@ module upload --type job --name myjob --file /home/ksb/Documents/service/spring-
 
 job create --name helloSpringXD --definition "myjob"
 
+job deploy helloSpringXD
+
+job launch helloSpringXD
+
 
 #################################################################################
 
