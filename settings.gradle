@@ -1,3 +1,4 @@
 rootProject.name = 'spring-xd-modules-practice'
 
 include 'batch-simple'
+include 'batch-api'
