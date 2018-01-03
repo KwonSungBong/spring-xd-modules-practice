@@ -23,6 +23,12 @@ public class BatchApiTasklet implements Tasklet, StepExecutionListener {
     @Autowired
     HttpService httpService;
 
+    @Value("${test}")
+    private String test;
+
+    @Value("${testtest}")
+    private String testtest;
+
     public BatchApiTasklet() {
         super();
     }
@@ -63,6 +69,9 @@ public class BatchApiTasklet implements Tasklet, StepExecutionListener {
                 System.out.println("result : " + result);
             }
         }
+
+        System.out.println("test : " + test);
+        System.out.println("testtest : " + testtest);
 
         return RepeatStatus.FINISHED;
     }
