@@ -40,10 +40,15 @@ job launch helloSpringXD
 3. 크론 등록
 
 http://www.bookstorage.kr:9393/admin-ui/#/jobs/deployments 접속 후 등록
-
+스트림쪽에 등록됨
 
 #################################################################################
 
+
+로컬 도커 실행
+
+docker build -t custom/springxd-singlenode .
+docker run --name singlenode -d -p 9393:9393 custom/springxd-singlenode
 
 
 
