@@ -44,6 +44,7 @@ http://www.bookstorage.kr:9393/admin-ui/#/jobs/deployments 접속 후 등록
 
 #################################################################################
 
+참고 : https://github.com/Jared314/docker-ubuntu-14-04-java8/blob/master/Dockerfile
 
 로컬 도커 실행
 
