@@ -42,6 +42,10 @@ job launch helloSpringXD
 http://www.bookstorage.kr:9393/admin-ui/#/jobs/deployments 접속 후 등록
 스트림쪽에 등록됨
 
+한시간마다 크론
+0 0 */1 * * *
+
+
 #################################################################################
 
 참고 : https://github.com/Jared314/docker-ubuntu-14-04-java8/blob/master/Dockerfile
