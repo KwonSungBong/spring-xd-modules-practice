@@ -30,7 +30,7 @@ dependencies {
 }
 
 // ex : gradle uploadModule -PtargetVersion=1_0_0
-task uploadModule(dependsOn: bootRepackage, group: 'build') {
+task uploadJobModule(dependsOn: bootRepackage, group: 'build') {
     doLast {
         def targetVersion = 1_0_0
         def jarPath = '@build/libs/' + project.name + '.jar'
@@ -46,10 +46,39 @@ task uploadModule(dependsOn: bootRepackage, group: 'build') {
 }
 
 // ex : gradle removeModule -PtargetVersion=1_0_0
-task removeModule(group: 'build') {
+task removeJobModule(group: 'build') {
     doLast {
         def targetVersion = 1_0_0
         def moduleType = 'job'
+        def adminUrl = 'http://www.bookstorage.kr:9393/modules/'
+        def requestUrl = adminUrl + moduleType + '/' + project.name + '-' + targetVersion
+
+        def result = ['curl', '-X', 'DELETE', requestUrl].execute()
+        print(result.text)
+    }
+}
+
+// ex : gradle uploadModule -PtargetVersion=1_0_0
+task uploadProcessorModule(dependsOn: bootRepackage, group: 'build') {
+    doLast {
+        def targetVersion = 1_0_0
+        def jarPath = '@build/libs/' + project.name + '.jar'
+        def moduleType = 'processor'
+        def adminUrl = 'http://www.bookstorage.kr:9393/modules/'
+        def requestUrl = adminUrl + moduleType + '/' + project.name + '-' + targetVersion
+
+        def result = ['curl', '--header', 'Content-Type:application/octet-stream'
+                      , '--data-binary', jarPath
+                      , requestUrl].execute()
+        print(result.text)
+    }
+}
+
+// ex : gradle removeModule -PtargetVersion=1_0_0
+task removeProcessorModule(group: 'build') {
+    doLast {
+        def targetVersion = 1_0_0
+        def moduleType = 'processor'
         def adminUrl = 'http://www.bookstorage.kr:9393/modules/'
         def requestUrl = adminUrl + moduleType + '/' + project.name + '-' + targetVersion
 
