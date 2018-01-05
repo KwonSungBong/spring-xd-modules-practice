@@ -62,4 +62,8 @@ https://github.com/spring-projects/spring-xd/blob/master/src/docs/asciidoc/Creat
 
 trigger --cron='0 */1 * * * *' --payload=test | processor-simple | log
 
+trigger --cron='0 */1 * * * *' --payload=http://test:secret@1.255.144.30:8000/v2/apps/test-service | processor-simple | json-to-tuple | transform --expression='payload.app.tasks[0].host + ":" + payload.app.tasks[0].ports[0]' | log
+
+
+
 
