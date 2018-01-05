@@ -56,8 +56,10 @@ docker build -t custom/springxd-singlenode .
 docker run --name singlenode -d -p 9393:9393 custom/springxd-singlenode
 
 
+#################################################################################
 
+https://github.com/spring-projects/spring-xd/blob/master/src/docs/asciidoc/Creating-a-Processor-Module.asciidoc
 
-
+trigger --cron='0 */1 * * * *' --payload=test | processor-simple | log
 
 
